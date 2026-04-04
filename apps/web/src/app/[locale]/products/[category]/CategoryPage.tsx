@@ -12,7 +12,7 @@ const mccbProducts = [
     id: 'echstm6',
     model: 'ECHSTM6',
     name: { en: 'Thermomagnetic Molded Case Circuit Breaker', zh: '热磁式塑壳断路器' },
-    image: '/images/products/mccb/echstm6.jpg',
+    image: '/images/products/mccb/main.jpg',
     pdfs: ['ECHSTM6-Thermomagnetic Molded Case Circuit Breaker.pdf'],
     description: { en: 'Standard thermomagnetic MCCB for industrial applications', zh: '工业应用标准热磁式塑壳断路器' },
     specs: { en: 'Frame: 125A-1250A, Breaking Capacity: 25-85kA', zh: '框架：125A-1250A，分断能力：25-85kA' },

@@ -2,56 +2,33 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { ArrowRight, Zap, Shield, Battery } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
-const slides = [
-  {
-    image: '/images/hero/hero-1.jpg',
-    icon: Shield,
-    color: 'primary',
-  },
-  {
-    image: '/images/hero/hero-2.jpg',
-    icon: Zap,
-    color: 'accent',
-  },
-  {
-    image: '/images/hero/hero-3.jpg',
-    icon: Battery,
-    color: 'green',
-  },
-];
+import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection({ locale }: { locale: string }) {
   const t = useTranslations('home.hero');
 
   return (
     <section className="relative h-[600px] lg:h-[700px] overflow-hidden">
-      {/* Background Swiper */}
-      <Swiper
-        modules={[Autoplay, Pagination, EffectFade]}
-        effect="fade"
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        loop
+      {/* Background with Pattern */}
+      <div 
         className="absolute inset-0 h-full w-full"
+        style={{
+          background: `
+            linear-gradient(135deg, rgba(30,58,138,0.85) 0%, rgba(15,23,42,0.75) 50%, rgba(30,58,138,0.85) 100%),
+            repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px),
+            radial-gradient(circle at 20% 50%, rgba(59,130,246,0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(147,51,234,0.2) 0%, transparent 50%)
+          `,
+        }}
       >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="h-full w-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"
-              style={{
-                background: 'linear-gradient(135deg, rgba(30,58,138,0.7) 0%, rgba(15,23,42,0.6) 100%)',
-              }}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        {/* Animated Grid Pattern */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+      </div>
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex items-center z-10">

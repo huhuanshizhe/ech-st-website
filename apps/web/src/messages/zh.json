@@ -1,0 +1,188 @@
+{
+  "common": {
+    "siteName": "ECH-ST电气",
+    "siteDescription": "专业电路保护与储能解决方案提供商",
+    "navigation": {
+      "home": "首页",
+      "products": "产品中心",
+      "solutions": "解决方案",
+      "about": "关于我们",
+      "news": "新闻动态",
+      "contact": "联系我们"
+    },
+    "actions": {
+      "learnMore": "了解更多",
+      "viewAll": "查看全部",
+      "download": "下载",
+      "submit": "提交",
+      "send": "发送",
+      "cancel": "取消",
+      "search": "搜索",
+      "searchProducts": "搜索产品..."
+    },
+    "footer": {
+      "company": "公司",
+      "products": "产品",
+      "support": "支持",
+      "contactUs": "联系我们",
+      "followUs": "关注我们",
+      "copyright": "© {year} ECH-ST电气 版权所有"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "专业电路保护与智能能源解决方案",
+      "subtitle": "领先的断路器、保护器件及储能系统制造商",
+      "cta": "浏览产品",
+      "contact": "联系我们"
+    },
+    "features": {
+      "title": "为什么选择ECH-ST？",
+      "subtitle": "超过20年的电气制造经验",
+      "quality": {
+        "title": "卓越品质",
+        "description": "ISO 9001认证制造，严格质量控制"
+      },
+      "innovation": {
+        "title": "创新驱动",
+        "description": "持续研发投入，推动产品创新升级"
+      },
+      "global": {
+        "title": "全球布局",
+        "description": "服务全球50多个国家和地区客户"
+      },
+      "support": {
+        "title": "全天候支持",
+        "description": "专业技术支持团队随时为您服务"
+      }
+    },
+    "products": {
+      "title": "明星产品",
+      "subtitle": "探索我们全面的电气产品系列",
+      "viewAll": "查看全部产品"
+    },
+    "solutions": {
+      "title": "行业解决方案",
+      "subtitle": "为各行业应用量身定制解决方案"
+    },
+    "cta": {
+      "title": "准备开始您的项目？",
+      "subtitle": "联系我们的团队获取定制解决方案",
+      "button": "获取报价"
+    }
+  },
+  "products": {
+    "title": "产品中心",
+    "subtitle": "全面的电气保护与能源解决方案",
+    "categories": "产品分类",
+    "allProducts": "全部产品",
+    "featured": "推荐产品",
+    "downloadCatalog": "下载目录",
+    "downloadDatasheet": "下载规格书",
+    "requestQuote": "询盘报价",
+    "specifications": "技术规格",
+    "features": "产品特点",
+    "applications": "应用场景",
+    "relatedProducts": "相关产品",
+    "noResults": "未找到相关产品",
+    "tryAdjusting": "请尝试调整搜索或筛选条件"
+  },
+  "about": {
+    "title": "关于ECH-ST电气",
+    "subtitle": "您值得信赖的电气解决方案合作伙伴",
+    "ourStory": {
+      "title": "我们的故事",
+      "content": "ECH-ST电气是一家专注于电路保护器件和智能能源解决方案的领先制造商。凭借先进的制造设施和专业的研发团队，我们为全球客户提供高质量的产品。"
+    },
+    "mission": {
+      "title": "我们的使命",
+      "content": "提供可靠、创新、可持续的电气解决方案，推动各行各业和社区的进步与发展。"
+    },
+    "vision": {
+      "title": "我们的愿景",
+      "content": "成为智能电气保护和能源管理领域的全球领导者，推动向更高效、更可持续的能源未来转型。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "quality": "品质卓越",
+      "innovation": "持续创新",
+      "integrity": "诚信经营",
+      "customer": "客户至上"
+    },
+    "facilities": {
+      "title": "生产基地",
+      "subtitle": "先进的制造车间和检测中心"
+    },
+    "certifications": {
+      "title": "资质认证",
+      "subtitle": "符合国际标准认证"
+    }
+  },
+  "solutions": {
+    "title": "解决方案",
+    "subtitle": "为各行业应用提供全面解决方案",
+    "energy": {
+      "title": "储能解决方案",
+      "description": "完整的微电网和储能系统解决方案"
+    },
+    "smart": {
+      "title": "智能电网解决方案",
+      "description": "现代配电系统的智能电路保护"
+    },
+    "industrial": {
+      "title": "工业保护",
+      "description": "工业应用的可靠电路保护方案"
+    },
+    "renewable": {
+      "title": "新能源应用",
+      "description": "太阳能和风能应用的专用保护方案"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们的团队取得联系，获取咨询与支持",
+    "form": {
+      "companyName": "公司名称",
+      "contactName": "联系人 *",
+      "email": "电子邮箱 *",
+      "phone": "电话号码",
+      "country": "国家/地区",
+      "products": "感兴趣的产品",
+      "message": "您的留言 *",
+      "submit": "提交询盘",
+      "success": "感谢您的询盘！我们将尽快与您联系。",
+      "error": "抱歉，提交询盘时出现错误，请重试。"
+    },
+    "info": {
+      "title": "联系方式",
+      "address": "地址",
+      "phone": "电话",
+      "email": "邮箱",
+      "wechat": "微信"
+    },
+    "offices": {
+      "title": "公司地址",
+      "rdCenter": "研发中心 & 制造工厂",
+      "supplyChain": "供应链管理"
+    }
+  },
+  "news": {
+    "title": "新闻动态",
+    "subtitle": "了解我们的最新资讯和行业洞察",
+    "all": "全部",
+    "company": "公司新闻",
+    "industry": "行业资讯",
+    "technical": "技术文章",
+    "readMore": "阅读更多",
+    "backToList": "返回新闻列表"
+  },
+  "chat": {
+    "title": "在线咨询",
+    "subtitle": "有什么可以帮助您？",
+    "placeholder": "输入您的消息...",
+    "welcome": "您好！有什么可以帮助您？我可以为您提供产品信息、技术规格咨询，或帮您联系我们的团队。",
+    "thinking": "思考中...",
+    "send": "发送",
+    "startNew": "开始新对话"
+  }
+}

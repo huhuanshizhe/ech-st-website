@@ -1,0 +1,188 @@
+{
+  "common": {
+    "siteName": "ECH-ST Electrics",
+    "siteDescription": "Professional Circuit Protection & Energy Storage Solutions Provider",
+    "navigation": {
+      "home": "Home",
+      "products": "Products",
+      "solutions": "Solutions",
+      "about": "About Us",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "actions": {
+      "learnMore": "Learn More",
+      "viewAll": "View All",
+      "download": "Download",
+      "submit": "Submit",
+      "send": "Send",
+      "cancel": "Cancel",
+      "search": "Search",
+      "searchProducts": "Search products..."
+    },
+    "footer": {
+      "company": "Company",
+      "products": "Products",
+      "support": "Support",
+      "contactUs": "Contact Us",
+      "followUs": "Follow Us",
+      "copyright": "© {year} ECH-ST Electrics. All rights reserved."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Professional Circuit Protection & Smart Energy Solutions",
+      "subtitle": "Leading manufacturer of circuit breakers, protection devices, and energy storage systems",
+      "cta": "Explore Our Products",
+      "contact": "Contact Us"
+    },
+    "features": {
+      "title": "Why Choose ECH-ST?",
+      "subtitle": "Over 20 years of experience in electrical manufacturing",
+      "quality": {
+        "title": "Premium Quality",
+        "description": "ISO 9001 certified manufacturing with strict quality control"
+      },
+      "innovation": {
+        "title": "Innovation Driven",
+        "description": "Continuous R&D investment for advanced product development"
+      },
+      "global": {
+        "title": "Global Presence",
+        "description": "Serving customers in over 50 countries worldwide"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Professional technical support team at your service"
+      }
+    },
+    "products": {
+      "title": "Featured Products",
+      "subtitle": "Discover our comprehensive range of electrical products",
+      "viewAll": "View All Products"
+    },
+    "solutions": {
+      "title": "Industry Solutions",
+      "subtitle": "Tailored solutions for various industrial applications"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Contact our team for customized solutions",
+      "button": "Get a Quote"
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Comprehensive range of electrical protection and energy solutions",
+    "categories": "Product Categories",
+    "allProducts": "All Products",
+    "featured": "Featured Products",
+    "downloadCatalog": "Download Catalog",
+    "downloadDatasheet": "Download Datasheet",
+    "requestQuote": "Request Quote",
+    "specifications": "Specifications",
+    "features": "Features",
+    "applications": "Applications",
+    "relatedProducts": "Related Products",
+    "noResults": "No products found",
+    "tryAdjusting": "Try adjusting your search or filter criteria"
+  },
+  "about": {
+    "title": "About ECH-ST Electrics",
+    "subtitle": "Your Trusted Partner in Electrical Solutions",
+    "ourStory": {
+      "title": "Our Story",
+      "content": "ECH-ST Electrics is a leading manufacturer specializing in circuit protection devices and smart energy solutions. With state-of-the-art manufacturing facilities and a dedicated R&D team, we deliver high-quality products to customers worldwide."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To provide reliable, innovative, and sustainable electrical solutions that power progress across industries and communities."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To become a global leader in smart electrical protection and energy management, driving the transition to a more efficient and sustainable energy future."
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": "Quality Excellence",
+      "innovation": "Continuous Innovation",
+      "integrity": "Business Integrity",
+      "customer": "Customer Focus"
+    },
+    "facilities": {
+      "title": "Our Facilities",
+      "subtitle": "Advanced manufacturing workshops and testing centers"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Compliant with international standards"
+    }
+  },
+  "solutions": {
+    "title": "Industry Solutions",
+    "subtitle": "Comprehensive solutions for various industrial applications",
+    "energy": {
+      "title": "Energy Storage Solutions",
+      "description": "Complete microgrid and energy storage system solutions"
+    },
+    "smart": {
+      "title": "Smart Grid Solutions",
+      "description": "Intelligent circuit protection for modern power distribution"
+    },
+    "industrial": {
+      "title": "Industrial Protection",
+      "description": "Reliable circuit protection for industrial applications"
+    },
+    "renewable": {
+      "title": "Renewable Energy",
+      "description": "Specialized protection for solar and wind applications"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for inquiries and support",
+    "form": {
+      "companyName": "Company Name",
+      "contactName": "Contact Person *",
+      "email": "Email Address *",
+      "phone": "Phone Number",
+      "country": "Country",
+      "products": "Products of Interest",
+      "message": "Your Message *",
+      "submit": "Send Inquiry",
+      "success": "Thank you! Your inquiry has been submitted successfully.",
+      "error": "Sorry, there was an error submitting your inquiry. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "wechat": "WeChat"
+    },
+    "offices": {
+      "title": "Our Offices",
+      "rdCenter": "R&D Center & Manufacturing",
+      "supplyChain": "Supply Chain Management"
+    }
+  },
+  "news": {
+    "title": "News & Insights",
+    "subtitle": "Stay updated with our latest news and industry insights",
+    "all": "All",
+    "company": "Company News",
+    "industry": "Industry News",
+    "technical": "Technical Articles",
+    "readMore": "Read More",
+    "backToList": "Back to News List"
+  },
+  "chat": {
+    "title": "Chat with Us",
+    "subtitle": "How can we help you?",
+    "placeholder": "Type your message...",
+    "welcome": "Hello! How can I assist you today? I can help with product information, technical specifications, or connect you with our team.",
+    "thinking": "Thinking...",
+    "send": "Send",
+    "startNew": "Start New Conversation"
+  }
+}

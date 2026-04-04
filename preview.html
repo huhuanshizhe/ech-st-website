@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECH-ST Electrics | Professional Circuit Protection & Energy Storage Solutions</title>
+    <meta name="description" content="ECH-ST Electrics is a leading manufacturer of circuit breakers, protection devices, and energy storage systems. Quality electrical solutions for global markets.">
+    <meta name="keywords" content="circuit breaker, MCCB, MCB, SPD, MOV, energy storage, microgrid, smart grid">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1f2937; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        .header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo img { height: 40px; }
+        .logo-text { font-size: 24px; font-weight: 700; color: #1d4ed8; }
+        .nav { display: flex; gap: 30px; }
+        .nav a { text-decoration: none; color: #374151; font-weight: 500; transition: color 0.2s; }
+        .nav a:hover { color: #1d4ed8; }
+        .nav-btn { background: #1d4ed8; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+        .nav-btn:hover { background: #1e40af; color: white; }
+        .lang-switch { background: #f3f4f6; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); color: white; padding: 150px 0 100px; margin-top: 70px; position: relative; overflow: hidden; }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; opacity: 0.9; margin-bottom: 30px; max-width: 600px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: white; color: #1d4ed8; }
+        .btn-primary:hover { background: #f3f4f6; }
+        .btn-outline { border: 2px solid white; color: white; margin-left: 15px; background: transparent; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+        
+        /* Stats */
+        .stats-bar { background: rgba(0,0,0,0.2); margin-top: 60px; padding: 30px 0; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .stat-number { font-size: 36px; font-weight: 700; }
+        .stat-label { opacity: 0.8; margin-top: 5px; }
+        
+        /* Features */
+        .features { padding: 80px 0; background: #f9fafb; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 15px; }
+        .section-title p { color: #6b7280; font-size: 18px; max-width: 600px; margin: 0 auto; }
+        .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .feature-icon { width: 60px; height: 60px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
+        .feature-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .feature-card p { color: #6b7280; font-size: 14px; }
+        
+        /* Products */
+        .products { padding: 80px 0; }
+        .section-header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 40px; }
+        .section-header a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        .product-image { height: 200px; background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 48px; position: relative; overflow: hidden; }
+        .product-image::after { content: 'View Details'; position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center; font-size: 14px; transform: translateY(100%); transition: transform 0.3s; }
+        .product-card:hover .product-image::after { transform: translateY(0); }
+        .product-info { padding: 25px; }
+        .product-tag { color: #1d4ed8; font-weight: 600; font-size: 13px; margin-bottom: 8px; }
+        .product-info h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .product-info p { color: #6b7280; font-size: 14px; line-height: 1.6; }
+        
+        /* Categories */
+        .categories { padding: 80px 0; background: #f9fafb; }
+        .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .category-card { background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+        .category-card:hover { background: #1d4ed8; color: white; transform: translateY(-5px); }
+        .category-card:hover .category-count { background: rgba(255,255,255,0.2); color: white; }
+        .category-icon { font-size: 40px; margin-bottom: 15px; }
+        .category-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .category-count { display: inline-block; background: #f3f4f6; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #6b7280; }
+        
+        /* Solutions */
+        .solutions { padding: 80px 0; }
+        .solution-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .solution-card { border-radius: 12px; padding: 40px 30px; color: white; text-align: center; position: relative; overflow: hidden; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+        .solution-card.energy { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
+        .solution-card.smart { background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); }
+        .solution-card.industrial { background: linear-gradient(135deg, #374151 0%, #4b5563 100%); }
+        .solution-card.renewable { background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); }
+        .solution-icon { width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
+        .solution-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+        .solution-card p { font-size: 14px; opacity: 0.9; }
+        
+        /* CTA */
+        .cta { background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%); color: white; padding: 80px 0; text-align: center; }
+        .cta h2 { font-size: 36px; font-weight: 700; margin-bottom: 15px; }
+        .cta p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; }
+        .cta .btn { background: white; color: #1d4ed8; font-size: 16px; padding: 16px 32px; }
+        
+        /* Footer */
+        .footer { background: #111827; color: white; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+        .footer-brand img { height: 40px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+        .footer-brand h3 { font-size: 24px; font-weight: 700; margin-bottom: 15px; }
+        .footer-brand p { color: #9ca3af; font-size: 14px; line-height: 1.8; }
+        .footer-links h4 { font-size: 14px; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links a { display: block; color: #9ca3af; text-decoration: none; margin-bottom: 12px; font-size: 14px; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid #374151; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; color: #6b7280; font-size: 14px; }
+        .footer-bottom a { color: #9ca3af; text-decoration: none; margin-left: 20px; }
+        
+        /* Chat Widget */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .chat-btn { width: 60px; height: 60px; background: #1d4ed8; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+        .chat-btn:hover { transform: scale(1.1); }
+        .chat-btn svg { width: 28px; height: 28px; fill: white; }
+        .chat-indicator { position: absolute; top: 0; right: 0; width: 14px; height: 14px; background: #f59e0b; border-radius: 50%; border: 2px solid white; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        
+        @media (max-width: 1024px) {
+            .feature-grid, .category-grid { grid-template-columns: repeat(2, 1fr); }
+            .solution-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .product-grid { grid-template-columns: 1fr; }
+            .feature-grid, .category-grid, .solution-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="/images/logo.png" alt="ECH-ST Electrics" onerror="this.style.display='none'">
+                    <span class="logo-text">ECH-ST</span>
+                </a>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <button class="lang-switch">🇺🇸 EN</button>
+                    <a href="#contact" class="nav-btn">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Professional Circuit Protection<br>& Smart Energy Solutions</h1>
+            <p>Leading manufacturer of circuit breakers, protection devices, and energy storage systems. Serving 50+ countries worldwide.</p>
+            <div>
+                <a href="#products" class="btn btn-primary">Explore Products</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+            
+            <div class="stats-bar">
+                <div class="stats">
+                    <div>
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Export Countries</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Product Models</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">ISO</div>
+                        <div class="stat-label">Certified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose ECH-ST?</h2>
+                <p>Over 20 years of experience in electrical manufacturing</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Premium Quality</h3>
+                    <p>ISO 9001 certified manufacturing with strict quality control</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Innovation Driven</h3>
+                    <p>Continuous R&D investment for advanced product development</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Presence</h3>
+                    <p>Serving customers in over 50 countries worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>24/7 Support</h3>
+                    <p>Professional technical support team at your service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title" style="margin-bottom: 0; text-align: left;">
+                    <h2>Featured Products</h2>
+                    <p style="margin: 0;">Discover our comprehensive range of electrical products</p>
+                </div>
+                <a href="#">View All Products →</a>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: #f3f4f6;"><img src="/images/products/mccb/main.jpg" alt="MCCB Circuit Breakers" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <div class="product-tag">ECHSTM6 Series</div>
+                        <h3>Molded Case Circuit Breakers (MCCB)</h3>
+                        <p>Thermomagnetic & Electronic MCCB. Frame sizes 125A-1250A, breaking capacity up to 85kA. IoT smart models available.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background: #f3f4f6;"><img src="/images/products/mcb/main.jpg" alt="MCB Circuit Breakers" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <div class="product-tag">ECHMCB Series</div>
+                        <h3>Miniature Circuit Breakers (MCB)</h3>
+                        <p>Standard MCB, RCBO, and RCCB for residential & commercial applications. Type B RCBO for smooth DC detection.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background: #f3f4f6;"><img src="/images/products/energy-storage/main.jpg" alt="Energy Storage Systems" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="product-info">
+                        <div class="product-tag">ECH-ESS Series</div>
+                        <h3>Energy Storage Systems</h3>
+                        <p>Complete turnkey energy storage solutions including grid-forming PCS, BMU, EMS, and containerized systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Categories</h2>
+                <p>Comprehensive range of electrical protection and energy solutions</p>
+            </div>
+            <div class="category-grid">
+                <a href="#" class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>MCCB</h3>
+                    <span class="category-count">15+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">🔌</div>
+                    <h3>MCB</h3>
+                    <span class="category-count">8+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3>Circuit Protection</h3>
+                    <span class="category-count">6+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">🔋</div>
+                    <h3>Energy Storage</h3>
+                    <span class="category-count">4+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>IoT Smart Devices</h3>
+                    <span class="category-count">5+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">📡</div>
+                    <h3>RS485 Chip</h3>
+                    <span class="category-count">2+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">🔧</div>
+                    <h3>Accessories</h3>
+                    <span class="category-count">10+ Products</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">⚛️</div>
+                    <h3>Capacitors</h3>
+                    <span class="category-count">Various Specs</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industry Solutions</h2>
+                <p>Tailored solutions for various industrial applications</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-card energy">
+                    <div class="solution-icon">🔋</div>
+                    <h3>Energy Storage</h3>
+                    <p>Complete microgrid and energy storage system solutions for commercial & industrial applications</p>
+                </div>
+                <div class="solution-card smart">
+                    <div class="solution-icon">⚡</div>
+                    <h3>Smart Grid</h3>
+                    <p>Intelligent circuit protection for modern power distribution systems</p>
+                </div>
+                <div class="solution-card industrial">
+                    <div class="solution-icon">🏭</div>
+                    <h3>Industrial Protection</h3>
+                    <p>Reliable circuit protection solutions for industrial applications</p>
+                </div>
+                <div class="solution-card renewable">
+                    <div class="solution-icon">☀️</div>
+                    <h3>Renewable Energy</h3>
+                    <p>Specialized protection for solar and wind energy applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Factory Section -->
+    <section class="about" id="about" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>About ECH-ST Electrics</h2>
+                <p>Professional electrical manufacturing with over 20 years of experience</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 40px;">
+                <div>
+                    <img src="/images/factory/factory-main.jpg" alt="ECH-ST Factory" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                </div>
+                <div>
+                    <h3 style="font-size: 24px; margin-bottom: 20px; color: #111827;">Leading Electrical Manufacturer in China</h3>
+                    <p style="color: #6b7280; line-height: 1.8; margin-bottom: 20px;">
+                        ECH-ST Electrics is a professional manufacturer specializing in circuit breakers, protection devices, and energy storage systems. With R&D centers and manufacturing facilities in Wenzhou and a supply chain center in Nanjing, we serve customers in over 50 countries worldwide.
+                    </p>
+                    <p style="color: #6b7280; line-height: 1.8; margin-bottom: 20px;">
+                        Our product portfolio includes MCCB, MCB, SPD, MOV, Energy Storage Systems, IoT Smart Devices, and RS485 chips. We are committed to providing high-quality electrical solutions for residential, commercial, and industrial applications.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #1d4ed8; font-size: 20px;">[OK]</span>
+                            <span>ISO 9001 Certified</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #1d4ed8; font-size: 20px;">[OK]</span>
+                            <span>CE / CB Certified</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #1d4ed8; font-size: 20px;">[OK]</span>
+                            <span>20+ Years Experience</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #1d4ed8; font-size: 20px;">[OK]</span>
+                            <span>50+ Export Countries</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Smart Distribution -->
+            <div style="margin-top: 60px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 20px; color: #111827;">Smart Distribution Solutions</h3>
+                        <p style="color: #6b7280; line-height: 1.8; margin-bottom: 20px;">
+                            Our intelligent distribution solutions combine traditional circuit protection with modern IoT technology, enabling real-time monitoring, remote control, and predictive maintenance for your electrical systems.
+                        </p>
+                        <ul style="color: #6b7280; line-height: 2; list-style: none; padding: 0;">
+                            <li>- Real-time power monitoring</li>
+                            <li>- Remote control and management</li>
+                            <li>- Fault diagnosis and alerts</li>
+                            <li>- Energy optimization</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="/images/factory/smart-distribution.jpg" alt="Smart Distribution" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Videos Section -->
+    <section id="videos" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manufacturing Facility</h2>
+                <p>See our state-of-the-art production workshops and testing facilities</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <video controls style="width: 100%; height: 200px; background: #1f2937;">
+                        <source src="/videos/MCCB Manufacturing workshop.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <div style="padding: 20px;">
+                        <h4 style="font-size: 18px; color: #111827; margin-bottom: 8px;">MCCB Manufacturing Workshop</h4>
+                        <p style="color: #6b7280; font-size: 14px;">Advanced MCCB production line with automated assembly and testing</p>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <video controls style="width: 100%; height: 200px; background: #1f2937;">
+                        <source src="/videos/testing center.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <div style="padding: 20px;">
+                        <h4 style="font-size: 18px; color: #111827; margin-bottom: 8px;">Testing Center</h4>
+                        <p style="color: #6b7280; font-size: 14px;">Comprehensive quality testing with international standard equipment</p>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <video controls style="width: 100%; height: 200px; background: #1f2937;">
+                        <source src="/videos/Circuit breaker mechanism parts production workshop.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <div style="padding: 20px;">
+                        <h4 style="font-size: 18px; color: #111827; margin-bottom: 8px;">Mechanism Parts Production</h4>
+                        <p style="color: #6b7280; font-size: 14px;">Precision mechanism components manufacturing workshop</p>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <video controls style="width: 100%; height: 200px; background: #1f2937;">
+                        <source src="/videos/Injection molding manufacturing workshop.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <div style="padding: 20px;">
+                        <h4 style="font-size: 18px; color: #111827; margin-bottom: 8px;">Injection Molding Workshop</h4>
+                        <p style="color: #6b7280; font-size: 14px;">High-quality plastic components injection molding production</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Download Section -->
+    <section id="downloads" style="padding: 80px 0; background: #f9fafb;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Documentation</h2>
+                <p>Download detailed specifications and catalogs for our products</p>
+            </div>
+            
+            <!-- Company Profile -->
+            <div style="background: white; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <h3 style="font-size: 20px; color: #111827; margin-bottom: 15px;">Company Profile</h3>
+                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #f3f4f6; border-radius: 8px;">
+                    <span style="font-size: 24px;">📄</span>
+                    <div>
+                        <h4 style="font-size: 16px; color: #111827;">ECH-ST Electrics Company Profile</h4>
+                        <p style="color: #6b7280; font-size: 14px;">Complete company introduction and product overview (PDF, 14.5 MB)</p>
+                    </div>
+                    <a href="/documents/company-profile.pdf" download style="background: #1d4ed8; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; margin-left: auto;">Download</a>
+                </div>
+            </div>
+            
+            <!-- Product Categories Documents -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px;">
+                <!-- MCCB Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #1d4ed8; margin-bottom: 15px;">MCCB Circuit Breakers</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/mccb/ECHSTM6-Thermomagnetic Molded Case Circuit Breaker.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ECHSTM6 Thermomagnetic MCCB
+                        </a>
+                        <a href="/documents/products/mccb/ECHSTM6E-Electronic Molded Case Circuit Breaker.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ECHSTM6E Electronic MCCB
+                        </a>
+                        <a href="/documents/products/mccb/ECHSTM6ZY-250M-IoT Intelligent Circuit Breaker.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ECHSTM6ZY IoT Intelligent MCCB
+                        </a>
+                        <a href="/documents/products/mccb/ECHSTM7DC-630-New Energy DC Circuit Breaker.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ECHSTM7DC New Energy DC MCCB
+                        </a>
+                        <a href="/documents/products/mccb/Accessory series.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> MCCB Accessories
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- MCB Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #059669; margin-bottom: 15px;">MCB Circuit Breakers</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/mcb/MCB Product Catalog.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> MCB Product Catalog (Complete)
+                        </a>
+                        <a href="/documents/products/mcb/Type-B-RCBO.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> Type B RCBO (DC Detection)
+                        </a>
+                        <a href="/documents/products/mcb/RCCB B type.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> RCCB Type B
+                        </a>
+                        <a href="/documents/products/mcb/RCCB.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> RCCB Standard
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Energy Storage Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #d97706; margin-bottom: 15px;">Energy Storage Systems</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/energy-storage/SOLAR ENERGY STORAGE SYSTEM.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> Solar Energy Storage System
+                        </a>
+                        <a href="/documents/products/energy-storage/ESS_All-in-one.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ESS All-in-One Solution
+                        </a>
+                        <a href="/documents/products/energy-storage/C&I Energy Storage.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> C&I Energy Storage
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Circuit Protection Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #7c3aed; margin-bottom: 15px;">Circuit Protection Devices</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/spd/Surge Protective Device and Backup Protector Selection Guide.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> SPD Selection Guide
+                        </a>
+                        <a href="/documents/products/mov/Metal Oxide Varistor (MOV) Datasheet.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> MOV Datasheet
+                        </a>
+                        <a href="/documents/products/mov/Metal Oxide Varistor(MOV) -7D 10D 14D 20DSeries.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> MOV 7D-20D Series
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- RS485 Chip Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #374151; margin-bottom: 15px;">RS485 Communication Chip</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/rs485/RS485(ECH485EESA、ECH485NEESA)-Specification sheet.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ECH485EESA/NEESA Specification
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- IoT Smart Devices Documents -->
+                <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                    <h3 style="font-size: 18px; color: #dc2626; margin-bottom: 15px;">IoT Smart Devices</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <a href="/documents/products/iot/Product Manual for Smart Cutout.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> Smart Cutout Manual
+                        </a>
+                        <a href="/documents/products/iot/ZW32-12_Product_Manual_EN.pdf" download style="display: flex; align-items: center; gap: 10px; padding: 12px; background: #f9fafb; border-radius: 6px; text-decoration: none; color: #374151;">
+                            <span>📥</span> ZW32-12 Pole-Mounted Breaker
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 80px 0; background: #f9fafb;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for inquiries and quotes</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                <div>
+                    <h3 style="font-size: 20px; margin-bottom: 25px; color: #111827;">Send Us a Message</h3>
+                    <form style="display: grid; gap: 20px;">
+                        <input type="text" placeholder="Your Name" style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 16px;">
+                        <input type="email" placeholder="Email Address" style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 16px;">
+                        <input type="text" placeholder="Company Name" style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 16px;">
+                        <textarea placeholder="Your Message" rows="5" style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
+                        <button type="submit" style="background: #1d4ed8; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 style="font-size: 20px; margin-bottom: 25px; color: #111827;">Contact Information</h3>
+                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="font-size: 16px; color: #1d4ed8; margin-bottom: 10px;">Wenzhou Office (R&D and Factory)</h4>
+                            <p style="color: #6b7280;">No. 888, Industrial Zone, Wenzhou, Zhejiang, China</p>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="font-size: 16px; color: #1d4ed8; margin-bottom: 10px;">Nanjing Office (Supply Chain Center)</h4>
+                            <p style="color: #6b7280;">Nanjing, Jiangsu, China</p>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="font-size: 16px; color: #1d4ed8; margin-bottom: 10px;">Email</h4>
+                            <p style="color: #6b7280;">sales@ech-st.com</p>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="font-size: 16px; color: #1d4ed8; margin-bottom: 10px;">Phone / WhatsApp</h4>
+                            <p style="color: #6b7280;">+86 13851615796</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; color: #1d4ed8; margin-bottom: 15px;">WeChat QR Code</h4>
+                            <img src="/images/contact/wechat-qr.png" alt="WeChat QR Code" style="width: 150px; border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact our team for customized solutions and professional quotes</p>
+            <a href="mailto:sales@ech-st.com" class="btn">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="/images/logo.png" alt="ECH-ST" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';">
+                    <h3 style="display: none;">ECH-ST Electrics</h3>
+                    <p>Professional circuit protection & energy storage solutions provider, serving 50+ countries worldwide.</p>
+                    <p style="margin-top: 15px;">
+                        📧 sales@ech-st.com<br>
+                        📞 +86 13851615796<br>
+                        🌐 www.ech-st.com
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">Solutions</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <a href="#">MCCB Circuit Breakers</a>
+                    <a href="#">MCB Circuit Breakers</a>
+                    <a href="#">SPD & MOV</a>
+                    <a href="#">Energy Storage</a>
+                    <a href="#">IoT Smart Devices</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <a href="#">Wenzhou: R&D & Factory</a>
+                    <a href="#">Nanjing: Supply Chain</a>
+                    <a href="#">WeChat: 13851615796</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ECH-ST Electrics. All rights reserved.</span>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-btn" title="Chat with us">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+            <span class="chat-indicator"></span>
+        </button>
+    </div>
+</body>
+</html>

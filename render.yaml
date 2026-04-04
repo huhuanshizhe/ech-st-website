@@ -1,0 +1,39 @@
+services:
+  # 后端 API 服务
+  - type: web
+    name: ech-st-api
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: cd packages/api && pip install -r requirements.txt
+    startCommand: cd packages/api && python main.py
+    envVars:
+      - key: DATABASE_TYPE
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ech-st-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 10000
+
+  # 前台网站（可选，已部署到 Vercel）
+  # - type: web
+  #   name: ech-st-web
+  #   env: node
+  #   region: singapore
+  #   plan: free
+  #   buildCommand: cd apps/web && npm install && npm run build
+  #   startCommand: cd apps/web && npm start
+
+databases:
+  # PostgreSQL 数据库
+  - name: ech-st-db
+    region: singapore
+    plan: free
+    user: echst
+    databaseName: echst_db

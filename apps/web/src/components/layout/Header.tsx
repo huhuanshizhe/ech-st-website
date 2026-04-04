@@ -86,15 +86,12 @@ export default function Header({ locale }: { locale: string }) {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center">
             <img
               src="/images/logo.png"
               alt="ECH-ST Electrics"
               className="h-10 w-auto"
             />
-            <span className="text-xl font-bold text-primary-700 hidden sm:block">
-              ECH-ST
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

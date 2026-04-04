@@ -34,11 +34,10 @@ export default function Footer({ locale }: { locale: string }) {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/images/logo-white.png"
+                src="/images/logo.png"
                 alt="ECH-ST Electrics"
-                className="h-10 w-auto"
+                className="h-10 w-auto brightness-0 invert"
               />
-              <span className="text-xl font-bold">ECH-ST</span>
             </div>
             <p className="text-gray-400 mb-4 text-sm">
               {locale === 'zh'

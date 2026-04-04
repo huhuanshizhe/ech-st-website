@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import ProductListPage from './ProductListPage';
 
@@ -15,10 +16,11 @@ export async function generateMetadata({
   };
 }
 
-export default function ProductsPage({
+export default async function ProductsPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  setRequestLocale(locale);
   return <ProductListPage locale={locale} />;
 }

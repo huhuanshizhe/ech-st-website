@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
@@ -26,6 +27,7 @@ export default function HomePage({
 }: {
   params: { locale: string };
 }) {
+  setRequestLocale(locale);
   const t = useTranslations('home');
 
   return (

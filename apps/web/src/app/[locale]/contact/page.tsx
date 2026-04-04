@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import ContactPageContent from './ContactPageContent';
 
@@ -15,10 +16,11 @@ export async function generateMetadata({
   };
 }
 
-export default function ContactPage({
+export default async function ContactPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  setRequestLocale(locale);
   return <ContactPageContent locale={locale} />;
 }

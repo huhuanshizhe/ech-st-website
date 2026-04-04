@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import AboutPageContent from './AboutPageContent';
 
@@ -15,10 +16,11 @@ export async function generateMetadata({
   };
 }
 
-export default function AboutPage({
+export default async function AboutPage({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  setRequestLocale(locale);
   return <AboutPageContent locale={locale} />;
 }

@@ -169,3 +169,37 @@ class SiteConfig(Base):
     key = Column(String(100), unique=True, nullable=False)
     value = Column(JSON, nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class SEOMeta(Base):
+    """SEO元数据模型"""
+    __tablename__ = "seo_meta"
+    
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    page_type = Column(String(50), nullable=False)  # home, product, category, article, etc.
+    page_id = Column(String(36), nullable=True)  # 关联的产品/分类/文章ID
+    title = Column(JSON, nullable=True)  # {"en": "...", "zh": "..."}
+    description = Column(JSON, nullable=True)
+    keywords = Column(JSON, nullable=True)
+    og_image = Column(String(500), nullable=True)
+    canonical_url = Column(String(500), nullable=True)
+    structured_data = Column(JSON, nullable=True)  # Schema.org 结构化数据
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class ProductSEO(Base):
+    """产品SEO信息"""
+    __tablename__ = "product_seo"
+    
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    product_id = Column(String(36), ForeignKey("products.id"), nullable=False, unique=True)
+    meta_title = Column(JSON, nullable=True)
+    meta_description = Column(JSON, nullable=True)
+    keywords = Column(JSON, nullable=True)
+    og_image = Column(String(500), nullable=True)
+    structured_data = Column(JSON, nullable=True)  # Product Schema
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    product = relationship("Product", backref="seo_info")

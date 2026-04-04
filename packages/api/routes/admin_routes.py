@@ -416,3 +416,182 @@ def update_inquiry(inquiry_id: str, inquiry_data: InquiryUpdate, db: Session = D
     db.refresh(inquiry)
     
     return {"message": "Inquiry updated successfully"}
+
+
+# ==================== Articles Management ====================
+
+class ArticleCreate(BaseModel):
+    title: dict
+    slug: str
+    summary: Optional[dict] = None
+    content: dict
+    cover_image: Optional[str] = None
+    category: str = "news"
+    tags: Optional[list] = []
+    published_at: Optional[datetime] = None
+
+class ArticleUpdate(BaseModel):
+    title: Optional[dict] = None
+    slug: Optional[str] = None
+    summary: Optional[dict] = None
+    content: Optional[dict] = None
+    cover_image: Optional[str] = None
+    category: Optional[str] = None
+    tags: Optional[list] = None
+    published_at: Optional[datetime] = None
+
+@admin_routes.get("/articles", tags=["Admin Articles"])
+def get_admin_articles(
+    page: int = 1,
+    limit: int = 20,
+    category: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    """Get all articles"""
+    from models.database import Article
+    query = db.query(Article)
+    
+    if category:
+        query = query.filter(Article.category == category)
+    
+    total = query.count()
+    articles = query.order_by(Article.created_at.desc()).offset((page-1)*limit).limit(limit).all()
+    
+    return [{
+        "id": str(a.id),
+        "title": a.title,
+        "slug": a.slug,
+        "summary": a.summary,
+        "category": a.category,
+        "tags": a.tags or [],
+        "cover_image": a.cover_image,
+        "published_at": a.published_at.isoformat() if a.published_at else None,
+        "created_at": a.created_at.isoformat()
+    } for a in articles]
+
+@admin_routes.post("/articles", tags=["Admin Articles"])
+def create_article(data: ArticleCreate, db: Session = Depends(get_db)):
+    """Create a new article"""
+    from models.database import Article
+    
+    article = Article(
+        title=data.title,
+        slug=data.slug,
+        summary=data.summary,
+        content=data.content,
+        cover_image=data.cover_image,
+        category=data.category,
+        tags=data.tags,
+        published_at=data.published_at
+    )
+    
+    db.add(article)
+    db.commit()
+    db.refresh(article)
+    
+    return {"id": str(article.id), "message": "Article created successfully"}
+
+@admin_routes.get("/articles/{article_id}", tags=["Admin Articles"])
+def get_article(article_id: str, db: Session = Depends(get_db)):
+    """Get a single article"""
+    from models.database import Article
+    article = db.query(Article).filter(Article.id == article_id).first()
+    if not article:
+        raise HTTPException(status_code=404, detail="Article not found")
+    
+    return {
+        "id": str(article.id),
+        "title": article.title,
+        "slug": article.slug,
+        "summary": article.summary,
+        "content": article.content,
+        "cover_image": article.cover_image,
+        "category": article.category,
+        "tags": article.tags,
+        "published_at": article.published_at.isoformat() if article.published_at else None,
+        "created_at": article.created_at.isoformat()
+    }
+
+@admin_routes.patch("/articles/{article_id}", tags=["Admin Articles"])
+def update_article(article_id: str, data: ArticleUpdate, db: Session = Depends(get_db)):
+    """Update an article"""
+    from models.database import Article
+    article = db.query(Article).filter(Article.id == article_id).first()
+    if not article:
+        raise HTTPException(status_code=404, detail="Article not found")
+    
+    update_data = data.dict(exclude_unset=True)
+    for field, value in update_data.items():
+        setattr(article, field, value)
+    
+    article.updated_at = datetime.utcnow()
+    db.commit()
+    
+    return {"message": "Article updated successfully"}
+
+@admin_routes.delete("/articles/{article_id}", tags=["Admin Articles"])
+def delete_article(article_id: str, db: Session = Depends(get_db)):
+    """Delete an article"""
+    from models.database import Article
+    article = db.query(Article).filter(Article.id == article_id).first()
+    if not article:
+        raise HTTPException(status_code=404, detail="Article not found")
+    
+    db.delete(article)
+    db.commit()
+    
+    return {"message": "Article deleted successfully"}
+
+
+# ==================== Settings Management ====================
+
+@admin_routes.get("/settings", tags=["Admin Settings"])
+def get_settings(db: Session = Depends(get_db)):
+    """Get site settings"""
+    from models.database import SiteConfig
+    
+    configs = db.query(SiteConfig).all()
+    settings = {}
+    
+    for config in configs:
+        settings[config.key] = config.value
+    
+    # 返回默认设置结构
+    return {
+        "site_name": settings.get("site_name", {"en": "ECH-ST Electrics", "zh": "ECH-ST电气"}),
+        "site_description": settings.get("site_description", {"en": "Professional Circuit Protection", "zh": "专业电路保护"}),
+        "contact_email": settings.get("contact_email", "sales@ech-st.com"),
+        "contact_phone": settings.get("contact_phone", "+86 13851615796"),
+        "contact_address": settings.get("contact_address", {"en": "", "zh": ""}),
+        "social_links": settings.get("social_links", {"linkedin": "", "facebook": "", "wechat": ""}),
+        "seo": settings.get("seo", {
+            "default_title": {"en": "", "zh": ""},
+            "default_description": {"en": "", "zh": ""},
+            "default_keywords": {"en": "", "zh": ""},
+            "og_image": ""
+        }),
+        "geo": settings.get("geo", {
+            "latitude": "",
+            "longitude": "",
+            "region": "",
+            "city": "",
+            "country": ""
+        })
+    }
+
+@admin_routes.post("/settings", tags=["Admin Settings"])
+def save_settings(data: dict, db: Session = Depends(get_db)):
+    """Save site settings"""
+    from models.database import SiteConfig
+    
+    for key, value in data.items():
+        config = db.query(SiteConfig).filter(SiteConfig.key == key).first()
+        if config:
+            config.value = value
+        else:
+            config = SiteConfig(key=key, value=value)
+            db.add(config)
+    
+    db.commit()
+    
+    return {"message": "Settings saved successfully"}

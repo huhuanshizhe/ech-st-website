@@ -9,6 +9,7 @@ from datetime import datetime
 import os
 
 from routes import products, categories, inquiries, admin, chat
+from routes.admin_routes import admin_routes
 from models.database import init_db
 
 # Create FastAPI app

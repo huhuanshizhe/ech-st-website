@@ -46,7 +46,7 @@ export default function HeroSection({ locale }: { locale: string }) {
             <div
               className="h-full w-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"
               style={{
-                background: 'linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(15,23,42,0.8) 100%)',
+                background: 'linear-gradient(135deg, rgba(30,58,138,0.5) 0%, rgba(15,23,42,0.4) 100%)',
               }}
             />
           </SwiperSlide>

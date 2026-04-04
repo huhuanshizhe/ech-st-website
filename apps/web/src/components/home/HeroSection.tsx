@@ -46,7 +46,7 @@ export default function HeroSection({ locale }: { locale: string }) {
             <div
               className="h-full w-full bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"
               style={{
-                background: 'linear-gradient(135deg, rgba(30,58,138,0.5) 0%, rgba(15,23,42,0.4) 100%)',
+                background: 'linear-gradient(135deg, rgba(30,58,138,0.7) 0%, rgba(15,23,42,0.6) 100%)',
               }}
             />
           </SwiperSlide>
@@ -54,13 +54,13 @@ export default function HeroSection({ locale }: { locale: string }) {
       </Swiper>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex items-center">
+      <div className="absolute inset-0 flex items-center z-10">
         <div className="container-custom">
           <div className="max-w-3xl animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
               {t('title')}
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-white font-medium mb-8 max-w-2xl drop-shadow-md">
               {t('subtitle')}
             </p>
             <div className="flex flex-wrap gap-4">

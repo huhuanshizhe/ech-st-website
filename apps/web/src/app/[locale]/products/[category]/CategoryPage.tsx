@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { ArrowLeft, Search, Download, FileText, RequestQuote } from 'lucide-react';
+import { ArrowLeft, Search, Download, FileText, ClipboardList } from 'lucide-react';
 import { clsx } from 'clsx';
 
 // MCCB产品数据 (基于客户资料)
@@ -329,7 +329,7 @@ export default function CategoryPage({ locale, categorySlug }: { locale: string;
                     href={`/contact?product=${product.model}`}
                     className="btn-primary flex-1 flex items-center justify-center gap-2 text-sm py-2"
                   >
-                    <RequestQuote className="w-4 h-4" />
+                    <ClipboardList className="w-4 h-4" />
                     {t('requestQuote')}
                   </Link>
                 </div>

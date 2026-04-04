@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { Award, Target, Eye, Heart, Factory, Video, Play, Certificate } from 'lucide-react';
+import { Award, Target, Eye, Heart, Factory, Video, Play, BadgeCheck } from 'lucide-react';
 import { useState } from 'react';
 
 const values = [
@@ -199,7 +199,7 @@ export default function AboutPageContent({ locale }: { locale: string }) {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {certifications.map((cert) => (
               <div key={cert.name} className="bg-white rounded-xl p-4 text-center shadow-sm">
-                <Certificate className="w-10 h-10 text-primary-600 mx-auto mb-2" />
+                <BadgeCheck className="w-10 h-10 text-primary-600 mx-auto mb-2" />
                 <div className="font-semibold text-gray-900 text-sm">{cert.name}</div>
                 <div className="text-gray-500 text-xs mt-1">
                   {currentLocale === 'zh' ? cert.desc.zh : cert.desc.en}

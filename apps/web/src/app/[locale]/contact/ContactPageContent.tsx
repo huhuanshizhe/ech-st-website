@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Mail, Phone, MapPin, Wechat, Send, CheckCircle, AlertCircle, Building, User, Globe, MessageSquare, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle, AlertCircle, Building, User, Globe, MessageSquare, FileText } from 'lucide-react';
 import { clsx } from 'clsx';
 
 const countries = [
@@ -274,7 +274,7 @@ export default function ContactPageContent({ locale }: { locale: string }) {
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <Wechat className="w-5 h-5 text-primary-600 mt-1" />
+                  <MessageCircle className="w-5 h-5 text-primary-600 mt-1" />
                   <div>
                     <div className="font-medium text-gray-900">{t('info.wechat')}</div>
                     <span className="text-gray-600">+86 13851615796</span>

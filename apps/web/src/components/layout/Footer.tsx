@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { Mail, Phone, MapPin, Wechat, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Linkedin, Facebook } from 'lucide-react';
 
 const quickLinks = [
   { key: 'home', href: '/' },
@@ -53,7 +53,7 @@ export default function Footer({ locale }: { locale: string }) {
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
-                <Wechat className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>

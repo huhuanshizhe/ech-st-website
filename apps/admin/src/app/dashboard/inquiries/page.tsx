@@ -163,9 +163,9 @@ export default function InquiriesPage() {
           <div className="flex items-center justify-center h-64">
             <div className="w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full animate-spin" />
           </div>
-        ) : inquiries?.data.length > 0 ? (
+        ) : (inquiries?.data?.length ?? 0) > 0 ? (
           <div className="space-y-3">
-            {inquiries.data.map((inquiry) => (
+            {inquiries?.data?.map((inquiry) => (
               <div
                 key={inquiry.id}
                 className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer"

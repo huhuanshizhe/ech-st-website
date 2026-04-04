@@ -11,6 +11,7 @@ import {
   CheckCircle,
   AlertCircle,
   ArrowRight,
+  Settings,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: ech-st-api
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: DATABASE_TYPE
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ech-st-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+databases:
+  - name: ech-st-db
+    region: singapore
+    plan: free

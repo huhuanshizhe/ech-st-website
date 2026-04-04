@@ -1,17 +1,19 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { Award, Target, Eye, Heart, Factory, Video, Play, BadgeCheck } from 'lucide-react';
+import { Award, Target, Eye, Heart, Video, Play, BadgeCheck, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
 
-const values = [
+type ColorKey = 'primary' | 'accent' | 'green' | 'purple';
+
+const values: { key: string; icon: LucideIcon; color: ColorKey }[] = [
   { key: 'quality', icon: Award, color: 'primary' },
   { key: 'innovation', icon: Target, color: 'accent' },
   { key: 'integrity', icon: Heart, color: 'green' },
   { key: 'customer', icon: Eye, color: 'purple' },
 ];
 
-const colorClasses = {
+const colorClasses: Record<ColorKey, string> = {
   primary: 'bg-primary-100 text-primary-600',
   accent: 'bg-amber-100 text-amber-600',
   green: 'bg-green-100 text-green-600',

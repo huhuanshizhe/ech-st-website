@@ -1,16 +1,18 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Award, Lightbulb, Globe, Headphones } from 'lucide-react';
+import { Award, Lightbulb, Globe, Headphones, LucideIcon } from 'lucide-react';
 
-const features = [
+type ColorKey = 'primary' | 'accent' | 'green' | 'purple';
+
+const features: { key: string; icon: LucideIcon; color: ColorKey }[] = [
   { key: 'quality', icon: Award, color: 'primary' },
   { key: 'innovation', icon: Lightbulb, color: 'accent' },
   { key: 'global', icon: Globe, color: 'green' },
   { key: 'support', icon: Headphones, color: 'purple' },
 ];
 
-const colorClasses = {
+const colorClasses: Record<ColorKey, string> = {
   primary: 'bg-primary-100 text-primary-600',
   accent: 'bg-amber-100 text-amber-600',
   green: 'bg-green-100 text-green-600',

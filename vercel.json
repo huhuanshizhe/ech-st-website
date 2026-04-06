@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "projects": [
+    {
+      "name": "ech-st-website",
+      "path": "apps/web",
+      "framework": "nextjs",
+      "installCommand": "cd ../.. && npm install"
+    },
+    {
+      "name": "ech-st-admin",
+      "path": "apps/admin",
+      "framework": "nextjs",
+      "installCommand": "cd ../.. && npm install",
+      "buildCommand": "cd ../.. && npm run build --workspace=apps/admin"
+    },
+    {
+      "name": "ech-st-api",
+      "path": "packages/api",
+      "installCommand": "cd ../.. && npm install",
+      "buildCommand": "echo 'No build needed for Python API'"
+    }
+  ]
+}
